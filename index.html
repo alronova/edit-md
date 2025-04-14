@@ -4,10 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <title>Document</title>
 </head>
 <body>
+    <div class="navbar">
+        <div class="nav-items">
+            <span class="logo">edit.md</span>
+            <span class="btns">
+                <span id="theme-switch">
+                    <img id="theme-img" src="res/moon.png" alt="Change Theme">
+                </span>
+                <span id="download">
+                    <img id="download-img" src="res/download-light.png" alt="Download Your File">
+                </span>
+            </span>
+        </div>
+    </div>
     <div class="container">
         <div class="editor">
             <textarea name="editor" id="editor"></textarea>
@@ -15,5 +27,6 @@
         <div class="previewer" id="previewer"></div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="script.js"></script>
 </html>
