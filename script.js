@@ -6,6 +6,14 @@ window.onload = () => {
   edit.value = data;
   let markedData = marked.parse(data);
   preview.innerHTML = markedData;
+
+  if (theme === "dark") {
+    t_img.src = "res/sun.png";
+    d_img.src = "res/download-dark.png";
+  } else if (theme === "light") {
+    t_img.src = "res/moon.png";
+    d_img.src = "res/download-light.png";
+  }
 };
 edit.addEventListener("input", () => {
   let markedData = marked.parse(edit.value);
@@ -24,10 +32,10 @@ let d_img = document.getElementById("download-img");
 switcher.addEventListener("click", switchTheme);
 
 function switchTheme() {
-    const currentTheme = document.body.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    document.body.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
+  const currentTheme = document.body.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  document.body.setAttribute("data-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
 
   if (newTheme === "dark") {
     t_img.src = "res/sun.png";
@@ -49,4 +57,4 @@ function downloadFile() {
   a.href = url;
   a.download = "edit.md";
   a.click();
-};
+}
